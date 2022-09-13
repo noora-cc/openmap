@@ -16,8 +16,18 @@ deploy:
   replicas: 1
   port:
   - 80
-  
+volumes:
+- claim: openmapappzdata
+  mount: /appz/data
+  name: openmapappzdata
+  size: 10Gi
+  mode: ReadWriteOnce
+- claim: openmapdata
+  mount: /data
+  name: openmapdata
+  size: 10Gi
+  mode: ReadWriteOnce
   
 properties:
-  revision : 4
+  revision : 5
 
