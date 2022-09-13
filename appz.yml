@@ -1,0 +1,23 @@
+app:
+  name: OpenMap-1.10
+  code: OPENMAP
+  notify: nshaji@ecloudcontrol.com
+
+build:
+  version: 1.10
+  env: DEV
+  build_file: none
+  output_files: output/*.zip
+  image_template: openmap-1.10
+  
+deploy:
+  context: noora-cc/DEV
+  type: statefulset
+  replicas: 1
+  port:
+  - 80
+  
+  
+properties:
+  revision : 1
+
